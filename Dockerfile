@@ -9,7 +9,7 @@ RUN mkdir /src
 WORKDIR /src
 ADD ./mysite /src
 # RUN ./manage.py makemigrations
-RUN ./manage.py migrate
+# RUN ./manage.py migrate
 RUN ./manage.py collectstatic --no-input
 
 CMD gunicorn mysite.wsgi -b 0.0.0.0:3013
