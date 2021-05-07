@@ -8,7 +8,7 @@ USER root
 RUN mkdir /src
 WORKDIR /src
 ADD ./mysite /src
-RUN ./manage.py makemigrations
+# RUN ./manage.py makemigrations
 RUN ./manage.py migrate
 RUN ./manage.py collectstatic --no-input
 
