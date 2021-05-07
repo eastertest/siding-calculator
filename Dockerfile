@@ -6,8 +6,8 @@ RUN pip install -r /config/requirements.txt
 
 USER root
 
-RUN apt-get update && apt-get install -y \
-  sqlite3
+RUN yum -y install sqlite3 && yum clean all -y
+
 
 RUN mkdir /src
 WORKDIR /src
