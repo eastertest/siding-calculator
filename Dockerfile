@@ -5,6 +5,10 @@ ADD requirements.txt /config/
 RUN pip install -r /config/requirements.txt
 
 USER root
+
+RUN apt-get update && apt-get install -y \
+  sqlite3
+
 RUN mkdir /src
 WORKDIR /src
 ADD ./mysite /src
