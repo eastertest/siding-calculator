@@ -4,7 +4,7 @@ ENV PYTHONUNBUFFERED 1
 ADD requirements.txt /config/
 RUN pip install -r /config/requirements.txt
 
-RUN mkdir /src
+RUN sudo mkdir /src
 WORKDIR /src
 ADD ./mysite /src
 RUN ./manage.py makemigrations
