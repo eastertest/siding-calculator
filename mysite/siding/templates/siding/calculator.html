@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<title>Siding Calculator</title>
+<body>
+
+<h2>Siding Cost Calculator</h2>
+<p>Input house dimensions in feet:</p>
+
+<p>
+  <label>Length</label>
+  <input id="inputLength" type="number" placeholder="Length" oninput="LengthConverter(this.value)" onchange="LengthConverter(this.value)">
+</p>
+
+<p>
+  <label>Width</label>
+  <input id="inputWidth" type="number" placeholder="Width" oninput="LengthConverter(this.value)" onchange="LengthConverter(this.value)">
+</p>
+
+<p>
+  <label>Height</label>
+  <input id="inputHeight" type="number" placeholder="Height" oninput="LengthConverter(this.value)" onchange="LengthConverter(this.value)">
+</p>
+
+
+<p>
+  <label>Siding Cost per Sq Ft</label>
+  <input id="inputCost" type="number" placeholder="Cost/sqFt" oninput="LengthConverter(this.value)" onchange="LengthConverter(this.value)">
+</p>
+
+<p>Cost: <span id="outputMeters"></span></p>
+
+<script>
+function LengthConverter(valNum) {
+  var len = document.getElementById('inputLength').value;
+  var wid = document.getElementById('inputWidth').value;
+  var hig = document.getElementById('inputHeight').value;
+  var cos = document.getElementById('inputCost').value;
+  document.getElementById("outputMeters").innerHTML=(len*hig*2 + wid*hig*2)*cos;
+}
+</script>
+</body>
+</html>
